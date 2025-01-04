@@ -31,7 +31,7 @@ async def enhance_rag(title:str=Form(),description:str=Form(),topic:str=Form(),w
             "poster":poster
         }
         print(req_body,poster.filename)
-        response = await add_topic(req_body)
+        #response = await add_topic(req_body)
         return response
     except Exception as e:
         print("Error occurred in rag enhance route - ",e)
