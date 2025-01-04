@@ -20,7 +20,7 @@ def query_rag(body:queryDAO):
         print("Error occurred in rag query route - ",e)
         return {"status":'error',"error":e} 
 
-@router.post("/enhance")
+#@router.post("/enhance")
 async def enhance_rag(title:str=Form(),description:str=Form(),topic:str=Form(),webResource:str=Form(...),poster:UploadFile=File()):
     try:
         req_body={
@@ -31,7 +31,7 @@ async def enhance_rag(title:str=Form(),description:str=Form(),topic:str=Form(),w
             "poster":poster
         }
         print(req_body,poster.filename)
-        #response = await add_topic(req_body)
+        response = await add_topic(req_body)
         return response
     except Exception as e:
         print("Error occurred in rag enhance route - ",e)
