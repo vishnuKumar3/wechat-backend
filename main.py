@@ -10,9 +10,7 @@ app=FastAPI()
 app.include_router(rag_router)
 app.include_router(topics_router)
 origins = [
-    "http://localhost:81",
     "http://localhost:5173",
-    "http://192.168.1.64:5173",
     "https://wechat-react.netlify.app"
 ]
 
