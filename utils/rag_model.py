@@ -15,13 +15,13 @@ def fetch_vector_store():
     pc = Pinecone(api_key=os.environ.get("PINECONE_API_KEY"))
     index=pc.Index("genai-project")
 
-    embedingModel=GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+    embedingModel=GoogleGenerativeAIEmbeddings(model="gemini-embedding-001")
     vector_store=PineconeVectorStore(index=index,embedding=embedingModel)
     return vector_store
 
 def fetch_LLM():
     return ChatGoogleGenerativeAI(
-            model="gemini-1.5-flash",
+            model="gemini-2.5-flash",
             temperature=0,
             max_tokens=200,
             timeout=None,
